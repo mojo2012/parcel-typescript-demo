@@ -1,8 +1,9 @@
 import { customElement } from "aurelia";
 import template from "./App.html";
+
 import { log } from "./util/Logger";
 
-@customElement({ name: "app", template })
+@customElement({ name: "App", template })
 export class App {
     private name: string;
     private message: string;

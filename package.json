@@ -10,7 +10,9 @@
     "typescript": "^3.7.4"
   },
   "dependencies": {
-    "aurelia": "^0.6.0"
+    "aurelia": "^0.6.0",
+    "aurelia-pal": "^1.8.2",
+    "aurelia-router": "^1.7.1"
   },
   "scripts": {
     "dev": "parcel src/resources/public/index.html",
