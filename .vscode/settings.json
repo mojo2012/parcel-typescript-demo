@@ -1,5 +1,8 @@
 {
     "files.exclude": {
         ".cache": true
+    },
+    "editor.codeActionsOnSave": {
+        "source.fixAll.tslint": true
     }
 }

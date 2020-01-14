@@ -5,6 +5,9 @@
     ],
     "jsRules": {},
     "rules": {
+        "member-access": false,
+        "max-classes-per-file": [true, 1],
+        "file-name-casing": [true, "pascal-case"],
         "no-console": {
             "severity": "warning",
             "options": [

@@ -1,7 +1,7 @@
 export default class Message {
-    private message: string
+    private message: string;
 
     constructor(message: string) {
-        this.message = message
+        this.message = message;
     }
 }

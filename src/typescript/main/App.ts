@@ -1,13 +1,16 @@
+import { customElement } from "aurelia";
+import template from "./App.html";
 import { log } from "./util/Logger";
 
+@customElement({ name: "app", template })
 export class App {
     private name: string;
+    private message: string;
 
-    constructor(name: string) {
-        this.name = name;
-    }
+    constructor() {
+        this.name = "Demo";
+        this.message = "Hello world";
 
-    public run(): void {
-        log.info(`Hello ${this.name}`);
+        log.info(`App started`);
     }
 }
