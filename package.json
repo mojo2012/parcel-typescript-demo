@@ -15,7 +15,7 @@
     "aurelia-router": "^1.7.1"
   },
   "scripts": {
-    "dev": "parcel src/resources/public/index.html",
-    "build": "parcel build src/resources/public/index.html"
+    "dev": "parcel src/main/resources/public/index.html",
+    "build": "parcel build src/main/resources/public/index.html"
   }
 }

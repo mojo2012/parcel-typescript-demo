@@ -1,5 +1,8 @@
 {
     "compilerOptions": {
+        "typeRoots": [
+            "src/main/resources/definitions/"
+        ],
         "lib": [
             "es2019"
         ],
@@ -9,5 +12,9 @@
         "emitDecoratorMetadata": true,
         "importHelpers": true,
         "moduleResolution": "node",
-    }
+    },
+    "include": [
+        "./src/**/*.ts",
+        "./src/**/*.d.ts"
+      ],
 }

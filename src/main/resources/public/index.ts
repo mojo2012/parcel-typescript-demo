@@ -1,4 +1,4 @@
 import Aurelia from "aurelia";
-import { App } from "../../typescript/main/App";
+import { App } from "../../../main/typescript/App";
 
 Aurelia.app(App).start();
