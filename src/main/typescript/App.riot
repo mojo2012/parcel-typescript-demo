@@ -1,14 +1,11 @@
 <App>
-<h1>{props.title}</h1>
-Hello {message}
+    <h1>{props.title}</h1>
+    Hello {state.message}
 
- <script >
-  export default {
-    message: "HI",
-    onMounted() {
-      this.message = "sadgsg";
-      this.update();
-    }
-  }
-  </script>
+    <ui-label></ui-label>
+
+    <script>
+        import { App } from "./App.ts";
+        export default new App();
+    </script>
 </App>

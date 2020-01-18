@@ -5,15 +5,15 @@
   "license": "MIT",
   "type": "module",
   "devDependencies": {
-    "tslint": "^5.20.1",
-    "typescript": "^3.7.4",
     "@riotjs/compiler": "^4.5.5",
+    "@riotjs/hot-reload": "^4.0.0-rc.1",
     "@riotjs/parcel-plugin-riot": "^4.0.1",
-    "@riotjs/hot-reload": "^4.0.0-rc.1"
+    "tslint": "^5.20.1",
+    "typescript": "^3.7.4"
   },
   "dependencies": {
-    "riot": "^4.0.0-rc.13",
-    "parcel-bundler": "^1.12.4"
+    "parcel-bundler": "^1.12.4",
+    "riot": "^4.0.0-rc.13"
   },
   "scripts": {
     "dev": "parcel src/main/resources/public/index.html",

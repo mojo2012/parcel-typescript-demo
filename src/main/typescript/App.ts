@@ -1,15 +1,14 @@
+import { AbstractComponent } from './AbstractComponent';
 import { log } from "./util/Logger";
 
-export class App {
-    private name: string;
-    private message: string;
+export class App extends AbstractComponent {
 
     constructor() {
-        this.name = "Demo";
-        this.message = "Hello world";
+        super();
+        this.state.name = "Demo";
+        this.state.message = "Hello world";
 
         log.info(`App started`);
     }
 }
 
-export default new App();

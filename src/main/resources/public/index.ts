@@ -1,9 +1,7 @@
 import * as riot from "riot";
 import App from "../../typescript/App.riot";
-
-// const mountApp = component(App);
-
-// const app = mountApp(document.getElementById("root"), { message: "Hello World" });
+import UILabel from "../../typescript/components/UILabel.riot";
 
 riot.register("app", App);
+riot.register("ui-label", UILabel);
 riot.mount("app");

@@ -1,0 +1,11 @@
+<ui-label>
+    <p>
+        <span>{state.text}</span>
+        <input ref="text-input" value="{state.text}" oninput={ handle(this.onChange) }></input>
+    </p>
+
+    <script>
+        import { UILabel } from "./UILabel.ts";
+        export default new UILabel();
+    </script>
+</ui-label>
