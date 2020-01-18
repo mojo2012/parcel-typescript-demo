@@ -4,7 +4,8 @@
             "src/main/resources/definitions/"
         ],
         "lib": [
-            "es2019"
+            "es2019",
+            "DOM"
         ],
         "module": "esnext",
         "target": "es2019",
@@ -15,6 +16,7 @@
     },
     "include": [
         "./src/**/*.ts",
-        "./src/**/*.d.ts"
+        "./src/**/*.d.ts",
+        "./src/**/*.riot",
       ],
 }

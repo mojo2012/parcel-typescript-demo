@@ -1,18 +1,19 @@
 {
   "name": "parcel-demo",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index.html",
   "license": "MIT",
   "type": "module",
   "devDependencies": {
-    "parcel-bundler": "^1.12.4",
     "tslint": "^5.20.1",
-    "typescript": "^3.7.4"
+    "typescript": "^3.7.4",
+    "@riotjs/compiler": "^4.5.5",
+    "@riotjs/parcel-plugin-riot": "^4.0.1",
+    "@riotjs/hot-reload": "^4.0.0-rc.1"
   },
   "dependencies": {
-    "aurelia": "^0.6.0",
-    "aurelia-pal": "^1.8.2",
-    "aurelia-router": "^1.7.1"
+    "riot": "^4.0.0-rc.13",
+    "parcel-bundler": "^1.12.4"
   },
   "scripts": {
     "dev": "parcel src/main/resources/public/index.html",

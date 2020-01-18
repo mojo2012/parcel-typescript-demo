@@ -1,4 +1,9 @@
-import Aurelia from "aurelia";
-import { App } from "../../../main/typescript/App";
+import * as riot from "riot";
+import App from "../../typescript/App.riot";
 
-Aurelia.app(App).start();
+// const mountApp = component(App);
+
+// const app = mountApp(document.getElementById("root"), { message: "Hello World" });
+
+riot.register("app", App);
+riot.mount("app");
