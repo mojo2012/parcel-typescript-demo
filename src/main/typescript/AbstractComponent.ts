@@ -13,6 +13,14 @@ export abstract class AbstractComponent { // implements RiotComponent {
         //
     }
 
+    handle(handler: (event: DocumentEvent) => void): any {
+        const eventHandler = handler.bind(this);
+
+        return (event: DocumentEvent) => {
+            eventHandler(event);
+        };
+    }
+
     // mount(element: HTMLElement, initialState?: object, parentScope?: object): RiotComponent<object, object> {
     //     return this;
     // }

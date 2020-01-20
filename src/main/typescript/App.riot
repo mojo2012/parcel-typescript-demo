@@ -1,8 +1,21 @@
 <App>
-    <h1>{props.title}</h1>
-    Hello {state.message}
+    <nav>
+        <h1>{props.title}</h1>
+    </nav>
 
-    <ui-label></ui-label>
+    <section id="content">
+        <ui-label text="test label"></ui-label>
+    </section>
+
+    <style>
+        nav {
+            background-color: purple;
+            color: white;
+            padding: 1px;
+            padding-left: 30px;
+        }
+
+    </style>
 
     <script>
         import { App } from "./App.ts";

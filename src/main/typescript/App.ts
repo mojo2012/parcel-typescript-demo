@@ -1,4 +1,4 @@
-import { AbstractComponent } from './AbstractComponent';
+import { AbstractComponent } from "./AbstractComponent";
 import { log } from "./util/Logger";
 
 export class App extends AbstractComponent {
@@ -11,4 +11,3 @@ export class App extends AbstractComponent {
         log.info(`App started`);
     }
 }
-

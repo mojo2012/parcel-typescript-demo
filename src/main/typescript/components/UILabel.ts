@@ -19,11 +19,4 @@ export class UILabel extends AbstractComponent {
         log.info("onChange");
     }
 
-    handle(handler: (event: DocumentEvent) => void): any {
-        const eventHandler = handler.bind(this);
-
-        return (event: DocumentEvent) => {
-            eventHandler(event);
-        };
-    }
 }
