@@ -1,11 +1,14 @@
+import Component from "vue-class-component";
 import { AbstractComponent } from "../AbstractComponent";
 import { log } from "../util/Logger";
 
+@Component
 export class UILabel extends AbstractComponent {
+
+    text: string = "";
 
     constructor() {
         super();
-        this.state.text = "Hello you!";
     }
 
     onBeforeMount(): void {
@@ -14,8 +17,7 @@ export class UILabel extends AbstractComponent {
 
     onChange(event: InputEvent): void {
         const inputField = event.target as HTMLInputElement;
-        this.state.text = inputField.value;
-        this.update();
+        this.text = inputField.value;
         log.info("onChange");
     }
 

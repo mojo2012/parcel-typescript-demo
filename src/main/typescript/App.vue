@@ -1,15 +1,17 @@
 <template>
-    <nav>
-        <h1>{{title}}</h1>
-    </nav>
+    <div>
+        <nav>
+            <h1>{{title}}</h1>
+        </nav>
 
-    <!-- <section id="content">
-        <ui-label text="test label"></ui-label>
-    </section> -->
+        <section id="content">
+            <ui-label text="test label"></ui-label>
+        </section>
+    </div>
 </template>
 
 <script lang="ts">
-    import App from "./App.ts";
+    import { App } from "./App.ts";
     export default App;
 </script>
 

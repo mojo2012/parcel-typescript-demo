@@ -1,11 +1,16 @@
-<ui-label>
+<template>
     <p>
-        <span>{state.text}</span>
-        <input ref="text-input" value="{state.text}" oninput="{ handle(this.onChange) }"></input>
+        <span>{{text}}</span>
+        <input ref="text-input" :value="text" @input="onChange"></input>
     </p>
 
-    <script>
-        import { UILabel } from "./UILabel.ts";
-        export default new UILabel();
-    </script>
-</ui-label>
+</template>
+
+<script lang="ts">
+    import { UILabel } from "./UILabel.ts";
+    export default UILabel;
+</script>
+
+<style>
+
+</style>

@@ -6,19 +6,21 @@
     "type": "module",
     "devDependencies": {
         "@vue/component-compiler-utils": "^3.1.1",
+        "@types/vue": "^2.0.0",
         "parcel-bundler": "^1.12.4",
         "tslint": "^5.20.1",
         "typescript": "^3.7.4",
+        "vue-hot-reload-api": "^2.3.4",
         "vue-template-compiler": "^2.6.11"
     },
     "dependencies": {
         "vue": "^2.6.11",
         "vue-class-component": "^7.2.2",
-        "vue-hot-reload-api": "^2.3.4",
         "vue-property-decorator": "^8.3.0"
     },
     "scripts": {
         "dev": "parcel serve src/main/resources/public/index.html",
-        "build": "parcel build src/main/resources/public/index.html"
+        "build": "parcel build src/main/resources/public/index.html",
+        "clean": "rm -Rf dist"
     }
 }
