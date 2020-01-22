@@ -9,15 +9,18 @@
         ],
         "strict": true,
         "module": "esnext",
-        "target": "es2019",
+        "target": "esnext",
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
         "importHelpers": true,
         "moduleResolution": "node",
+        "jsx": "preserve",
+        "jsxFactory": "h"
     },
     "include": [
         "./src/**/*.ts",
         "./src/**/*.d.ts",
         "./src/**/*.riot",
+        "./src/**/*.vue",
     ],
 }

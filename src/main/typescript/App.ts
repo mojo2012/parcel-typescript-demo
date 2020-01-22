@@ -1,29 +1,19 @@
-import Vue from "vue";
+import Component from "vue-class-component";
 import { AbstractComponent } from "./AbstractComponent";
 import { log } from "./util/Logger";
 
-export class App extends AbstractComponent {
+@Component
+export default class App extends AbstractComponent {
 
-    private _title: string = "";
+    title: string = "";
 
     constructor() {
         super();
-        this.title = "Demo App";
+        this.title = "Demo";
 
         log.info(`App started`);
     }
 
-    data(): any {
-        return { title: "test" };
-    }
-
-    get title(): string {
-        return this._title;
-    }
-
-    set title(value: string) {
-        this._title = value;
-    }
 }
 
 // export default Vue.extend(new App() as any);

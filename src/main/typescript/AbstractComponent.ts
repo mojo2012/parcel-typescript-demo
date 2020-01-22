@@ -1,9 +1,10 @@
 import Vue from "vue";
 
-export abstract class AbstractComponent {
+export abstract class AbstractComponent extends Vue {
     // [key: string]: any;
 
     constructor() {
+        super();
     }
 
     handle(handler: (event: DocumentEvent) => void): any {

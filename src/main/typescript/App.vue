@@ -9,17 +9,8 @@
 </template>
 
 <script lang="ts">
-    import { App } from "./App.ts";
-    let app = new App();
-    // let app = {
-    //     data: function () {
-    //         return {
-    //             title: "test"
-    //         }
-    //     }
-    // };
-
-    export default app;
+    import App from "./App.ts";
+    export default App;
 </script>
 
 <style>
