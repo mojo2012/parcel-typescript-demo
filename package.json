@@ -5,15 +5,17 @@
     "license": "MIT",
     "type": "module",
     "devDependencies": {
-        "@riotjs/compiler": "^4.5.5",
-        "@riotjs/hot-reload": "^4.0.0-rc.1",
-        "@riotjs/parcel-plugin-riot": "^4.0.1",
+        "@vue/component-compiler-utils": "^3.1.1",
+        "parcel-bundler": "^1.12.4",
         "tslint": "^5.20.1",
         "typescript": "^3.7.4",
-        "parcel-bundler": "^1.12.4"
+        "vue-template-compiler": "^2.6.11"
     },
     "dependencies": {
-        "riot": "^4.0.0-rc.13"
+        "vue": "^2.6.11",
+        "vue-class-component": "^7.2.2",
+        "vue-hot-reload-api": "^2.3.4",
+        "vue-property-decorator": "^8.3.0"
     },
     "scripts": {
         "dev": "parcel serve src/main/resources/public/index.html",
