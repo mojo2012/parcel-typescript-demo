@@ -7,12 +7,4 @@ export abstract class AbstractComponent extends Vue {
         super();
     }
 
-    handle(handler: (event: DocumentEvent) => void): any {
-        const eventHandler = handler.bind(this);
-
-        return (event: DocumentEvent) => {
-            eventHandler(event);
-        };
-    }
-
 }
