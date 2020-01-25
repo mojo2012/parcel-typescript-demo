@@ -4,9 +4,9 @@ export abstract class AbstractComponent { // implements RiotComponent {
     [key: string]: any;
     props: any = {};
     state?: any = {};
-    root: HTMLElement;
+    root: HTMLElement | undefined;
     name?: string;
-    slots: Array<import("@riotjs/dom-bindings").SlotBindingData>;
+    slots: Array<import("@riotjs/dom-bindings").SlotBindingData> | undefined;
     components?: { [key: string]: import("riot").RiotComponentShell<object, object>; };
 
     constructor() {

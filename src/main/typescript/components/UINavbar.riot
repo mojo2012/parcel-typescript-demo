@@ -1,0 +1,23 @@
+<header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+        <!-- Title -->
+        <span class="mdl-layout-title">{props.title}</span>
+
+        <slot name="items-left"></slot>
+
+        <!-- Add spacer, to align navigation to the right -->
+        <div class="mdl-layout-spacer"></div>
+
+        <slot name="items-right"></slot>
+    </div>
+</header>
+
+<style>
+
+</style>
+
+
+<script>
+    import { UINavbar } from "./UINavbar.ts";
+    export default new UINavbar();
+</script>

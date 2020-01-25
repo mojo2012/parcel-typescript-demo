@@ -1,19 +1,44 @@
-<App>
-    <nav>
-        <h1>{props.title}</h1>
-    </nav>
+<template class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <ui-navbar title="{props.title}">
 
-    <section id="content">
-        <ui-label text="test label"></ui-label>
-    </section>
+        <nav class="mdl-navigation mdl-layout--large-screen-only" slot="items-left">
+            <a class=" mdl-navigation__link" href="">Left</a>
+        </nav>
+
+        <!-- Navigation. We hide it in small screens. -->
+        <nav class="mdl-navigation mdl-layout--large-screen-only" slot="items-right">
+            <a class=" mdl-navigation__link" href="">Link</a>
+            <a class="mdl-navigation__link" href="">Link</a>
+            <a class="mdl-navigation__link" href="">Link</a>
+            <a class="mdl-navigation__link" href="">Link</a>
+        </nav>
+
+    </ui-navbar>
+
+
+    <div class="mdl-layout__drawer">
+        <ui-navbar title="{props.title}"></ui-navbar>
+        <nav class="mdl-navigation" slot="navigation">
+            <a class="mdl-navigation__link" href="">Nav Link</a>
+            <a class="mdl-navigation__link" href="">Nav Link</a>
+            <a class="mdl-navigation__link" href="">Nav Link</a>
+            <a class="mdl-navigation__link" href="">Nav Link</a>
+        </nav>
+    </div>
+
+    <main class="mdl-layout__content">
+        <div class="page-content">
+            <ui-label text="test label"></ui-label>
+        </div>
+    </main>
 
     <style>
-        nav {
+        /* nav {
             background-color: purple;
             color: white;
             padding: 1px;
             padding-left: 30px;
-        }
+        } */
 
     </style>
 
@@ -21,4 +46,4 @@
         import { App } from "./App.ts";
         export default new App();
     </script>
-</App>
+</template>
