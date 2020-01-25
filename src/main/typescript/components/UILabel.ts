@@ -1,11 +1,14 @@
 import Component from "vue-class-component";
+import { Prop } from "vue-property-decorator";
+
 import { AbstractComponent } from "../AbstractComponent";
 import { log } from "../util/Logger";
 
 @Component
 export class UILabel extends AbstractComponent {
 
-    text: string = "";
+    @Prop({ default: "" })
+    text: string | undefined;
 
     constructor() {
         super();
