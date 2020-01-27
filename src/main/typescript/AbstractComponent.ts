@@ -1,7 +1,9 @@
 import { RiotComponent } from "riot";
+import { log } from "./util/Logger";
 
 export abstract class AbstractComponent { // implements RiotComponent {
     [key: string]: any;
+    className: string;
     props: any = {};
     state?: any = {};
     root: HTMLElement | undefined;
@@ -21,6 +23,10 @@ export abstract class AbstractComponent { // implements RiotComponent {
         };
     }
 
+    onBeforeMount?(currentProps: object, currentState: object): void {
+        log.info(this.name + ": onBeforeMount");
+    }
+
     // mount(element: HTMLElement, initialState?: object, parentScope?: object): RiotComponent<object, object> {
     //     return this;
     // }
@@ -37,30 +43,25 @@ export abstract class AbstractComponent { // implements RiotComponent {
     //     return false;
     // }
 
-    // onBeforeMount?(currentProps: object, currentState: object): void {
-    //     //
-    // }
+    onMounted?(currentProps: object, currentState: object): void {
+        log.info(this.name + ": onMounted");
+    }
 
-    // onMounted?(currentProps: object, currentState: object): void {
-    //     //
-    // }
+    onBeforeUpdate?(currentProps: object, currentState: object): void {
+        log.info(this.name + ": onBeforeUpdate");
+    }
 
-    // onBeforeUpdate?(currentProps: object, currentState: object): void {
-    //     //
-    // }
+    onUpdated?(currentProps: object, currentState: object): void {
+        log.info(this.name + ": onUpdated");
+    }
 
-    // onUpdated?(currentProps: object, currentState: object): void {
-    //     //
-    // }
+    onBeforeUnmount?(currentProps: object, currentState: object): void {
+        log.info(this.name + ": onBeforeUnmount");
+    }
 
-    // onBeforeUnmount?(currentProps: object, currentState: object): void {
-    //     this.props = currentProps;
-    //     this.state = currentState;
-    // }
-
-    // onUnmounted?(currentProps: object, currentState: object): void {
-    //     //
-    // }
+    onUnmounted?(currentProps: object, currentState: object): void {
+        log.info(this.name + ": onUnmounted");
+    }
 
     // $(selector: string): HTMLElement {
     //     return null;

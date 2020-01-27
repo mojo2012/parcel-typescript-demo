@@ -1,30 +1,30 @@
 <template class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <ui-navbar title="{props.title}">
 
-        <nav class="mdl-navigation mdl-layout--large-screen-only" slot="items-left">
+        <ui-navgroup slot="items-left">
             <a class=" mdl-navigation__link" href="">Left</a>
-        </nav>
+        </ui-navgroup>
 
         <!-- Navigation. We hide it in small screens. -->
-        <nav class="mdl-navigation mdl-layout--large-screen-only" slot="items-right">
+        <ui-navgroup slot="items-right">
             <a class=" mdl-navigation__link" href="">Link</a>
             <a class="mdl-navigation__link" href="">Link</a>
             <a class="mdl-navigation__link" href="">Link</a>
             <a class="mdl-navigation__link" href="">Link</a>
-        </nav>
+        </ui-navgroup>
 
     </ui-navbar>
 
-
-    <div class="mdl-layout__drawer">
+    <div class="mdl-layout__drawer mdl-layout--fixed-drawer">
         <ui-navbar title="{props.title}"></ui-navbar>
-        <nav class="mdl-navigation" slot="navigation">
+        <ui-navgroup class="mdl-navigation" slot="navigation">
             <a class="mdl-navigation__link" href="">Nav Link</a>
             <a class="mdl-navigation__link" href="">Nav Link</a>
             <a class="mdl-navigation__link" href="">Nav Link</a>
             <a class="mdl-navigation__link" href="">Nav Link</a>
-        </nav>
+        </ui-navgroup>
     </div>
+
 
     <main class="mdl-layout__content">
         <div class="page-content">
@@ -42,7 +42,7 @@
 
     </style>
 
-    <script>
+    <script lang="ts">
         import { App } from "./App.ts";
         export default new App();
     </script>

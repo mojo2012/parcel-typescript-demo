@@ -8,8 +8,4 @@ export class UINavbar extends AbstractComponent {
         this.state.title = "";
     }
 
-    onBeforeMount(): void {
-        log.info("onBeforeMount");
-    }
-
 }
