@@ -10,7 +10,7 @@
             "name": "Launch Chrome against localhost",
             "url": "http://localhost:1234",
             "webRoot": "${workspaceFolder}/parcel-demo/",
-            "runtimeExecutable": "/Applications/Internet/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary"
+            "runtimeExecutable": "/Applications/Internet/Google Chrome.app/Contents/MacOS/Google Chrome"
         }
     ]
 }

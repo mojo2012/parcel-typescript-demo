@@ -1,4 +1,4 @@
-<template class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+<app class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <ui-navbar title="{props.title}">
 
         <ui-navgroup slot="items-left">
@@ -15,8 +15,10 @@
 
     </ui-navbar>
 
-    <div class="mdl-layout__drawer mdl-layout--fixed-drawer">
-        <ui-navbar title="{props.title}"></ui-navbar>
+    <div class="mdl-layout__drawer">
+        <ui-navbar title="{props.title}">
+        </ui-navbar>
+
         <ui-navgroup class="mdl-navigation" slot="navigation">
             <a class="mdl-navigation__link" href="">Nav Link</a>
             <a class="mdl-navigation__link" href="">Nav Link</a>
@@ -27,18 +29,41 @@
 
 
     <main class="mdl-layout__content">
+        <aside class="mdl-components__nav docs-text-styling mdl-shadow--4dp">
+            A
+        </aside>
         <div class="page-content">
             <ui-label text="test label"></ui-label>
         </div>
     </main>
 
+    <!-- <footer>
+        <p>© 2020 by mojo</p>
+    </footer> -->
+
     <style>
-        /* nav {
-            background-color: purple;
-            color: white;
-            padding: 1px;
-            padding-left: 30px;
-        } */
+        div.page-content {
+            margin: 20px;
+        }
+
+        .mdl-layout__drawer {
+            border-right: 0px !important;
+        }
+
+        .mdl-components__nav {
+            margin-right: 20px;
+            float: left;
+            /* display: inline-block; */
+            background: #fff;
+            width: 300px;
+            height: 100%;
+            box-sizing: border-box;
+            padding: 24px 0;
+            -webkit-flex-shrink: 0;
+            -ms-flex-negative: 0;
+            flex-shrink: 0;
+            z-index: 1;
+        }
 
     </style>
 
@@ -46,4 +71,4 @@
         import { App } from "./App.ts";
         export default new App();
     </script>
-</template>
+</app>
