@@ -1,14 +1,21 @@
-<header class="mdl-layout__header">
-    <div class="mdl-layout__header-row">
-        <!-- Title -->
-        <span class="mdl-layout-title">{props.title}</span>
+<header class="mdc-top-app-bar">
+    <div class="mdc-top-app-bar__row">
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
 
-        <slot name="items-left"></slot>
+            <!-- menu button -->
+            <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button">menu</button>
 
-        <!-- Add spacer, to align navigation to the right -->
-        <div class="mdl-layout-spacer"></div>
+            <!-- Title -->
+            <span class="mdc-top-app-bar__title">{props.title}</span>
 
-        <slot name="items-right"></slot>
+            <!-- left aligned items -->
+            <slot name="items-left"></slot>
+        </section>
+
+        <!-- right aligned items -->
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+            <slot name="items-right"></slot>
+        </section>
     </div>
 
     <style>

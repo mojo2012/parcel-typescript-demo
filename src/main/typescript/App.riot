@@ -1,21 +1,24 @@
-<app class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+<app class="">
     <ui-navbar title="{props.title}">
 
         <ui-navgroup slot="items-left">
-            <a class=" mdl-navigation__link" href="">Left</a>
+            <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button"
+                aria-label="Print this page">print</button>
         </ui-navgroup>
 
         <!-- Navigation. We hide it in small screens. -->
         <ui-navgroup slot="items-right">
-            <a class=" mdl-navigation__link" href="">Link</a>
-            <a class="mdl-navigation__link" href="">Link</a>
-            <a class="mdl-navigation__link" href="">Link</a>
-            <a class="mdl-navigation__link" href="">Link</a>
+            <button class="mdc-button mdc-button__ripple mdc-top-app-bar__action-item  mdc-button__label">
+                <div class="mdc-button__ripple"></div>
+                <span class="mdc-button__label">Button</span>
+            </button>
+            <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button"
+                aria-label="Bookmark this page">bookmark</button>
         </ui-navgroup>
 
     </ui-navbar>
 
-    <div class="mdl-layout__drawer">
+    <!-- <div class="mdl-layout__drawer">
         <ui-navbar title="{props.title}">
         </ui-navbar>
 
@@ -25,15 +28,21 @@
             <a class="mdl-navigation__link" href="">Nav Link</a>
             <a class="mdl-navigation__link" href="">Nav Link</a>
         </ui-navgroup>
-    </div>
+    </div> -->
 
 
-    <main class="mdl-layout__content">
-        <aside class="mdl-components__nav docs-text-styling mdl-shadow--4dp">
+    <main class="mdc-layout-grid">
+        <!-- <aside class="mdl-components__nav docs-text-styling mdl-shadow--4dp">
             A
-        </aside>
-        <div class="page-content">
-            <ui-label text="test label"></ui-label>
+        </aside> -->
+
+        <div class="mdc-layout-grid__inner">
+            <div class="mdc-layout-grid__cell">
+                <div class="page-content">
+                    <ui-label text="test label"></ui-label>
+                </div>
+
+            </div>
         </div>
     </main>
 
@@ -42,28 +51,34 @@
     </footer> -->
 
     <style>
-        div.page-content {
+        div.mdc-layout-grid__inner {
+            margin-top: 50px !important;
+        }
+
+        /* div.page-content {
             margin: 20px;
-        }
+        } */
 
-        .mdl-layout__drawer {
+        /* .mdl-layout__drawer {
             border-right: 0px !important;
-        }
+        } */
 
-        .mdl-components__nav {
+        /* .mdl-components__nav {
             margin-right: 20px;
             float: left;
             /* display: inline-block; */
-            background: #fff;
-            width: 300px;
-            height: 100%;
-            box-sizing: border-box;
-            padding: 24px 0;
-            -webkit-flex-shrink: 0;
-            -ms-flex-negative: 0;
-            flex-shrink: 0;
-            z-index: 1;
+        background: #fff;
+        width: 300px;
+        height: 100%;
+        box-sizing: border-box;
+        padding: 24px 0;
+        -webkit-flex-shrink: 0;
+        -ms-flex-negative: 0;
+        flex-shrink: 0;
+        z-index: 1;
         }
+
+        */
 
     </style>
 
