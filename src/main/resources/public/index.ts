@@ -1,7 +1,7 @@
 import * as riot from "riot";
 import App from "../../typescript/App.riot";
 import UIButton from "../../typescript/components/UIButton.riot";
-import UIDrawer from '../../typescript/components/UIDrawer.riot';
+import UIDrawer from "../../typescript/components/UIDrawer.riot";
 import UILabel from "../../typescript/components/UILabel.riot";
 import UINavbar from "../../typescript/components/UINavbar.riot";
 import UINavbarItem from "../../typescript/components/UINavbarItem.riot";
