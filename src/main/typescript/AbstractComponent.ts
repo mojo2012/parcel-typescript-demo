@@ -45,6 +45,10 @@ export abstract class AbstractComponent { // implements RiotComponent {
 
     onMounted?(currentProps: object, currentState: object): void {
         log.info(this.name + ": onMounted");
+
+        // store component handler instance in the DOM
+        /* tslint:disable-next-line */
+        this.root["handler"] = this;
     }
 
     onBeforeUpdate?(currentProps: object, currentState: object): void {

@@ -1,103 +1,73 @@
 <app class="">
-    <!-- <div class="mdl-layout__drawer">
-    <ui-navbar title="{props.title}">
-    </ui-navbar>
-
-    <ui-navgroup class="mdl-navigation" slot="navigation">
-        <a class="mdl-navigation__link" href="">Nav Link</a>
-        <a class="mdl-navigation__link" href="">Nav Link</a>
-        <a class="mdl-navigation__link" href="">Nav Link</a>
-        <a class="mdl-navigation__link" href="">Nav Link</a>
-    </ui-navgroup>
-    </div> -->
-
-    <aside class="mdc-drawer mdc-drawer--dismissible mdc-drawer--open">
-        <div class="mdc-drawer__header">
-            <h3 class="mdc-drawer__title">Mail</h3>
-            <h6 class="mdc-drawer__subtitle">email@material.io</h6>
-        </div>
-        <div class="mdc-drawer__content">
-            <nav class="mdc-list"><a class="mdc-list-item mdc-list-item--activated" href="#" tabindex="0"
-                    aria-selected="true"><i class="material-icons mdc-list-item__graphic"
-                        aria-hidden="true">inbox</i>Inbox</a><a class="mdc-list-item" href="#" tabindex="-1"><i
-                        class="material-icons mdc-list-item__graphic" aria-hidden="true">star</i>Star</a><a
-                    class="mdc-list-item" href="#" tabindex="-1"><i class="material-icons mdc-list-item__graphic"
-                        aria-hidden="true">send</i>Sent Mail</a><a class="mdc-list-item" href="#" tabindex="-1"><i
-                        class="material-icons mdc-list-item__graphic" aria-hidden="true">drafts</i>Drafts</a>
-                <hr class="mdc-list-divider">
-                <h6 class="mdc-list-group__subheader">Labels</h6><a class="mdc-list-item" href="#" tabindex="-1"><i
-                        class="material-icons mdc-list-item__graphic" aria-hidden="true">bookmark</i>Family</a><a
-                    class="mdc-list-item" href="#" tabindex="-1"><i class="material-icons mdc-list-item__graphic"
-                        aria-hidden="true">bookmark</i>Friends</a><a class="mdc-list-item" href="#" tabindex="-1"><i
-                        class="material-icons mdc-list-item__graphic" aria-hidden="true">bookmark</i>Work</a>
-                <hr class="mdc-list-divider"><a class="mdc-list-item" href="#" tabindex="-1"><i
-                        class="material-icons mdc-list-item__graphic" aria-hidden="true">settings</i>Settings</a><a
-                    class="mdc-list-item" href="#" tabindex="-1"><i class="material-icons mdc-list-item__graphic"
-                        aria-hidden="true">announcement</i>Help &amp; feedback</a>
-            </nav>
-        </div>
-    </aside>
+    <ui-drawer class="nav-drawer">
+        <nav class="mdc-list">
+            <a class="mdc-list-item mdc-list-item--activated" href="#" aria-current="page">
+                <i class="material-icons mdc-list-item__graphic" aria-hidden="true">inbox</i>
+                <span class="mdc-list-item__text">Inbox</span>
+            </a>
+            <a class="mdc-list-item" href="#">
+                <i class="material-icons mdc-list-item__graphic" aria-hidden="true">send</i>
+                <span class="mdc-list-item__text">Outgoing</span>
+            </a>
+            <a class="mdc-list-item" href="#">
+                <i class="material-icons mdc-list-item__graphic" aria-hidden="true">drafts</i>
+                <span class="mdc-list-item__text">Drafts</span>
+            </a>
+        </nav>
+    </ui-drawer>
 
     <div class="mdc-drawer-app-content">
-        <ui-navbar title="{props.title}">
+        <ui-navbar title="{props.title}" onmenu="{ handle(this.onMenu) }">
 
             <ui-navgroup slot="items-left">
-                <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button"
-                    aria-label="Print this page">print</button>
+                <ui-navbar-item icon="print" label="Print this"></ui-navbar-item>
             </ui-navgroup>
 
-            <!-- Navigation. We hide it in small screens. -->
             <ui-navgroup slot="items-right">
-                <button class="mdc-button mdc-button__ripple mdc-top-app-bar__action-item  mdc-button__label">
-                    <div class="mdc-button__ripple"></div>
-                    <span class="mdc-button__label">Button</span>
-                </button>
-                <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button"
-                    aria-label="Bookmark this page">bookmark</button>
+                <ui-navbar-item icon="star" label="star"></ui-navbar-item>
+                <ui-navbar-item icon="bookmark" label="bookmark"></ui-navbar-item>
             </ui-navgroup>
 
-        </ui-navbar>
-
-        <main class="drawer-main-content">
-            <div class="mdc-layout-grid__inner">
-                <div class="mdc-layout-grid__cell">
-                    <div class="page-content">
-                        <ui-label text="test label"></ui-label>
+            <main class="drawer-main-content">
+                <div class="mdc-layout-grid__inner">
+                    <div class="mdc-layout-grid__cell">
+                        <div class="page-content">
+                            <ui-label text="test label"></ui-label>
+                        </div>
                     </div>
-                </div>
 
-                <div class="mdc-layout-grid__cell">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                        enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                        aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-                        anim id est laborum.</p>
-                </div>
+                    <div class="mdc-layout-grid__cell">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                            enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                            occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                            anim id est laborum.</p>
+                    </div>
 
-                <div class="mdc-layout-grid__cell">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                        enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                        aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-                        anim id est laborum.</p>
-                </div>
+                    <div class="mdc-layout-grid__cell">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                            enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                            occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                            anim id est laborum.</p>
+                    </div>
 
-                <div class="mdc-layout-grid__cell">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                        enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                        aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-                        anim id est laborum.</p>
-                </div>
+                    <div class="mdc-layout-grid__cell">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                            enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                            occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                            anim id est laborum.</p>
+                    </div>
 
-            </div>
-        </main>
+                </div>
+            </main>
     </div>
 
     <!-- <footer>
@@ -113,31 +83,6 @@
         div.mdc-layout-grid__inner {
             margin-top: 50px !important;
         }
-
-        /* div.page-content {
-            margin: 20px;
-        } */
-
-        /* .mdl-layout__drawer {
-            border-right: 0px !important;
-        } */
-
-        /* .mdl-components__nav {
-            margin-right: 20px;
-            float: left;
-            /* display: inline-block; */
-        background: #fff;
-        width: 300px;
-        height: 100%;
-        box-sizing: border-box;
-        padding: 24px 0;
-        -webkit-flex-shrink: 0;
-        -ms-flex-negative: 0;
-        flex-shrink: 0;
-        z-index: 1;
-        }
-
-        */
 
     </style>
 

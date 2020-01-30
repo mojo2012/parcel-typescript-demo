@@ -1,0 +1,10 @@
+<button class="mdc-button { props.icon ? 'material-icons mdc-icon-button' : ''}" aria-label="{props.label}"
+    onclick="{ handle(this.onClick) }">
+
+    {props.icon ? props.icon : props.label}
+
+    <script>
+        import { UIButton } from "./UIButton.ts";
+        export default new UIButton();
+    </script>
+</button>

@@ -10,4 +10,9 @@ export class App extends AbstractComponent {
 
         log.info(`App started`);
     }
+
+    onMenu(event: any): void {
+        log.info("Menu button clicked");
+        this.$(".nav-drawer").handler.open();
+    }
 }

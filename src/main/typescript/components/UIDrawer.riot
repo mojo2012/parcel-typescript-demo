@@ -1,0 +1,10 @@
+<aside class="{props.class} mdc-drawer mdc-drawer--dismissible">
+    <div class="mdc-drawer__content">
+        <slot></slot>
+    </div>
+
+    <script>
+        import { UIDrawer } from "./UIDrawer.ts";
+        export default new UIDrawer();
+    </script>
+</aside>
