@@ -9,6 +9,7 @@ export class UINavbarItem extends AbstractComponent {
     }
 
     onMounted?(currentProps: object, currentState: object): void {
+        super.onMounted(currentProps, currentState);
         const buttonRipple = new MDCRipple(document.querySelector(".mdc-icon-button"));
     }
 

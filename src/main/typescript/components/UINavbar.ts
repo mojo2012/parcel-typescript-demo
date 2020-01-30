@@ -10,7 +10,7 @@ export class UINavbar extends AbstractComponent {
     }
 
     onMounted?(currentProps: object, currentState: object): void {
-        // const topAppBarElement = document.querySelector('.mdc-top-app-bar');
+        super.onMounted(currentProps, currentState);
         const topAppBar = new MDCTopAppBar(this.root);
     }
 }

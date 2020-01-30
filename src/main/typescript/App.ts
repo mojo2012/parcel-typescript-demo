@@ -13,6 +13,6 @@ export class App extends AbstractComponent {
 
     onMenu(event: any): void {
         log.info("Menu button clicked");
-        this.$(".nav-drawer").handler.open();
+        this.$(".nav-drawer").handler.openOrClose();
     }
 }

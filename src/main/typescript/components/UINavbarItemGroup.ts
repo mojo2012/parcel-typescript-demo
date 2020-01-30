@@ -6,9 +6,4 @@ export class UINavbarItemGroup extends AbstractComponent {
         super();
     }
 
-    onBeforeMount?(currentProps: object, currentState: object): void {
-        super.onBeforeMount(currentProps, currentState);
-
-    }
-
 }

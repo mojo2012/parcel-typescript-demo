@@ -10,11 +10,12 @@ export class UIDrawer extends AbstractComponent {
     }
 
     onMounted?(currentProps: object, currentState: object): void {
+        super.onMounted(currentProps, currentState);
         this.internalHandler = MDCDrawer.attachTo(document.querySelector(".mdc-drawer"));
     }
 
     openOrClose(): void {
-        if (this.internalHandler.getDefaultFoundation().isOpen) {
+        if (this.internalHandler.getDefaultFoundation().isOpen()) {
             this.close();
         } else {
             this.open();
@@ -25,7 +26,7 @@ export class UIDrawer extends AbstractComponent {
         this.internalHandler.getDefaultFoundation().open();
     }
 
-    hide(): void {
+    close(): void {
         this.internalHandler.getDefaultFoundation().close();
     }
 
