@@ -1,7 +1,21 @@
-<aside class="{props.class} mdc-drawer mdc-drawer--dismissible">
+<aside class="mdc-drawer
+    { props.class } 
+    { props.adjust ? 'mdc-top-app-bar--fixed-adjust' : '' }
+    { props.dismissable ? 'mdc-drawer--dismissible' : '' }
+    ">
+
+
+    <div class="mdc-drawer__header" if={ props.title || props.subtitle }>
+        <h3 class="mdc-drawer__title" if="{props.title}">{props.title}</h3>
+        <h6 class="mdc-drawer__subtitle" if="{props.subtitle}">{props.subtitle}</h6>
+    </div>
     <div class="mdc-drawer__content">
         <slot></slot>
     </div>
+
+    <style>
+
+    </style>
 
     <script lang="ts">
         import { UIDrawer } from "./UIDrawer.ts";

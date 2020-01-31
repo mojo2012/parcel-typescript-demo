@@ -1,4 +1,11 @@
-<header class="mdc-top-app-bar drawer-top-app-bar">
+<header class="mdc-top-app-bar
+    { props.short     ? 'mdc-top-app-bar--short' : '' } 
+    { props.prominent ? 'mdc-top-app-bar--prominent' : '' } 
+    { props.fixed      ? 'mdc-top-app-bar--fixed' : '' } 
+    { props.dense     ? 'mdc-top-app-bar--dense' : '' }
+    { props.above     ? 'z-index-7' : '' } 
+    ">
+
     <div class="mdc-top-app-bar__row">
         <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
 

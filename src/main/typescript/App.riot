@@ -1,5 +1,18 @@
 <app class="">
-    <ui-drawer class="nav-drawer">
+
+    <ui-navbar title="{props.title}" onmenu="{ handle(this.onMenu) }" dense fixed above>
+
+        <ui-navgroup slot="items-left">
+            <ui-navbar-item icon="print" label="Print this"></ui-navbar-item>
+        </ui-navgroup>
+
+        <ui-navgroup slot="items-right">
+            <ui-navbar-item icon="star" label="star"></ui-navbar-item>
+            <ui-navbar-item icon="bookmark" label="bookmark"></ui-navbar-item>
+        </ui-navgroup>
+    </ui-navbar>
+
+    <ui-drawer class="nav-drawer" dismissable adjust title="Mail" subtitle="email@material.io">
         <nav class="mdc-list">
             <a class="mdc-list-item mdc-list-item--activated" href="#" aria-current="page">
                 <i class="material-icons mdc-list-item__graphic" aria-hidden="true">inbox</i>
@@ -16,20 +29,9 @@
         </nav>
     </ui-drawer>
 
-    <div class="mdc-drawer-app-content">
-        <ui-navbar title="{props.title}" onmenu="{ handle(this.onMenu) }">
+    <div class="mdc-drawer-app-content ">
 
-            <ui-navgroup slot="items-left">
-                <ui-navbar-item icon="print" label="Print this"></ui-navbar-item>
-            </ui-navgroup>
-
-            <ui-navgroup slot="items-right">
-                <ui-navbar-item icon="star" label="star"></ui-navbar-item>
-                <ui-navbar-item icon="bookmark" label="bookmark"></ui-navbar-item>
-            </ui-navgroup>
-        </ui-navbar>
-
-        <main class="drawer-main-content">
+        <main class="drawer-main-content main-content mdc-top-app-bar--fixed-adjust">
             <div class="mdc-layout-grid__inner">
                 <div class="mdc-layout-grid__cell">
                     <div class="page-content">
@@ -81,8 +83,22 @@
             height: 100vh;
         }
 
+        /* footer {
+            position: absolute;
+            bottom: 0px;
+            background-color: black;
+            height: 40px;
+            width: 100%;
+            color: white;
+            padding: 10px;
+        } */
+
         div.mdc-layout-grid__inner {
             margin-top: 50px !important;
+        }
+
+        .main-content {
+            padding: 20px;
         }
 
     </style>

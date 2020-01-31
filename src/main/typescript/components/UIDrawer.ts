@@ -1,9 +1,10 @@
 import { MDCDrawer } from "@material/drawer";
+import { MDCList } from "@material/list";
 import { AbstractComponent } from "../AbstractComponent";
 
 export class UIDrawer extends AbstractComponent {
 
-    internalHandler: MDCDrawer;
+    internalHandler: MDCDrawer | MDCList;
 
     constructor() {
         super();
@@ -11,23 +12,36 @@ export class UIDrawer extends AbstractComponent {
 
     onMounted?(currentProps: object, currentState: object): void {
         super.onMounted(currentProps, currentState);
-        this.internalHandler = MDCDrawer.attachTo(document.querySelector(".mdc-drawer"));
+
+        // tslint:disable-next-line: no-string-literal
+        if (currentProps["dismissable"]) {
+            this.internalHandler = MDCDrawer.attachTo(document.querySelector(".mdc-drawer"));
+        } else {
+            this.internalHandler = MDCList.attachTo(document.querySelector(".mdc-list"));
+            this.internalHandler.wrapFocus = true;
+        }
     }
 
     openOrClose(): void {
-        if (this.internalHandler.getDefaultFoundation().isOpen()) {
-            this.close();
-        } else {
-            this.open();
+        if (this.props.dismissable) {
+            if ((this.internalHandler as MDCDrawer).getDefaultFoundation().isOpen()) {
+                this.close();
+            } else {
+                this.open();
+            }
         }
     }
 
     open(): void {
-        this.internalHandler.getDefaultFoundation().open();
+        if (this.props.dismissable) {
+            (this.internalHandler as MDCDrawer).getDefaultFoundation().open();
+        }
     }
 
     close(): void {
-        this.internalHandler.getDefaultFoundation().close();
+        if (this.props.dismissable) {
+            (this.internalHandler as MDCDrawer).getDefaultFoundation().close();
+        }
     }
 
 }

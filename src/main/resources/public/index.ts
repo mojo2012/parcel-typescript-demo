@@ -1,4 +1,8 @@
+// import * as materialDesignLite from "material-design-lite";
 import * as riot from "riot";
+import "../../../../node_modules/material-components-web/dist/material-components-web.min.css";
+import "../../../../node_modules/material-icons";
+
 import App from "../../typescript/App.riot";
 import UIButton from "../../typescript/components/UIButton.riot";
 import UIDrawer from "../../typescript/components/UIDrawer.riot";
