@@ -1,0 +1,16 @@
+<template>
+    <a class="mdc-list-item { state.selected ? 'mdc-list-item--activated' : '' }" onclick="{props.onclick}" href="#"
+        aria-current="page">
+
+        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">{props.icon}</i>
+        <span class="mdc-list-item__text">{props.label}</span>
+    </a>
+
+    <style>
+    </style>
+
+    <script lang="ts">
+        import { UIListEntry } from "./UIListEntry.ts";
+        export default new UIListEntry();
+    </script>
+</template>
