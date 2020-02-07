@@ -8,7 +8,7 @@ export class UILabel extends AbstractComponent {
         this.state.text = "Hello you!";
     }
 
-    onChange(event: InputEvent): void {
+    public onChange(event: InputEvent): void {
         const inputField = event.target as HTMLInputElement;
         this.state.text = inputField.value;
         this.update();

@@ -5,7 +5,35 @@
     ],
     "jsRules": {},
     "rules": {
-        "member-access": false,
+        "member-access": true,
+        "member-ordering": [
+            true,
+            {
+                "order": [
+                    {
+                        "name": "java-style",
+                        "kinds": [
+                            "private-static-field",
+                            "protected-static-field",
+                            "public-static-field",
+                            "public-instance-field",
+                            "protected-instance-field",
+                            "private-instance-field",
+                            "private-constructor",
+                            "protected-constructor",
+                            "public-constructor",
+                            "private-instance-method",
+                            "protected-instance-method",
+                            "public-instance-method",
+                            "private-static-method",
+                            "protected-static-method",
+                            "public-static-method"
+                        ]
+                    },
+                    "constructor"
+                ]
+            }
+        ],
         "max-classes-per-file": [
             true,
             1

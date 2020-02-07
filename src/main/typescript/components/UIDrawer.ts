@@ -4,13 +4,13 @@ import { AbstractComponent } from "../AbstractComponent";
 
 export class UIDrawer extends AbstractComponent {
 
-    internalHandler: MDCDrawer | MDCList;
+    protected internalHandler: MDCDrawer | MDCList;
 
     constructor() {
         super();
     }
 
-    onMounted?(currentProps: object, currentState: object): void {
+    public onMounted?(currentProps: object, currentState: object): void {
         super.onMounted(currentProps, currentState);
 
         // tslint:disable-next-line: no-string-literal
@@ -22,7 +22,7 @@ export class UIDrawer extends AbstractComponent {
         }
     }
 
-    openOrClose(): void {
+    public openOrClose(): void {
         if (this.props.dismissable) {
             if ((this.internalHandler as MDCDrawer).getDefaultFoundation().isOpen()) {
                 this.close();
@@ -32,13 +32,13 @@ export class UIDrawer extends AbstractComponent {
         }
     }
 
-    open(): void {
+    public open(): void {
         if (this.props.dismissable) {
             (this.internalHandler as MDCDrawer).getDefaultFoundation().open();
         }
     }
 
-    close(): void {
+    public close(): void {
         if (this.props.dismissable) {
             (this.internalHandler as MDCDrawer).getDefaultFoundation().close();
         }
