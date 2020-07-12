@@ -1,7 +1,7 @@
 export class Store {
     private static instance: Store;
 
-    private registry: Map<string, Array<(value: any) => void>>;
+    private registry: Map<string, Array<(value: any) => void>> = new Map();
 
     private constructor() { }
 

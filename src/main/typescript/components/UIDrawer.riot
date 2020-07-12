@@ -1,7 +1,7 @@
 <aside class="mdc-drawer
     { props.class } 
-    { props.adjust ? 'mdc-top-app-bar--fixed-adjust' : '' }
-    { props.dismissable ? 'mdc-drawer--dismissible' : '' }
+    { props.hasOwnProperty('adjust')      ? 'mdc-top-app-bar--fixed-adjust' : '' }
+    { props.hasOwnProperty('dismissable') ? 'mdc-drawer--dismissible'      : '' }
     ">
 
 

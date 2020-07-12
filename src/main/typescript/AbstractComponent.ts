@@ -55,11 +55,10 @@ export abstract class AbstractComponent { // implements RiotComponent {
 
         // store component handler instance in the DOM
         if (this.root) {
-            /* tslint:disable-next-line */
             Reflect.set(this.root, "handler", this);
         }
         // this.state = currentState;
-        // this.props = currentProps;
+        // this.props.push(currentProps);
     }
 
     public onBeforeUpdate(currentProps: object, currentState: object): void {
