@@ -5,7 +5,12 @@ export class Store {
 
     private constructor() { }
 
-    public register(observer: object, key: string, fieldToUpdate: string) {
+    /**
+     * @param observer object that wants to receive events dispatcher for the given key
+     * @param key to watch for
+     * @param fieldToUpdate
+     */
+    public register(observer: object, key: string) {
         let updateCalls = this.registry.get(key);
 
         if (!updateCalls) {
@@ -13,10 +18,10 @@ export class Store {
             this.registry.set(key, updateCalls);
         }
 
-        updateCalls.push((value: any) => observer[fieldToUpdate] = value);
+        // updateCalls.push((value: any) => observer[fieldToUpdate] = value);
     }
 
-    public update(key: string, value: any) {
+    public dispatch(key: string, id?: string, value?: any) {
         const updateCalls = this.registry.get(key);
 
         if (updateCalls) {

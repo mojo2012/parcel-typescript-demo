@@ -1,18 +1,25 @@
 import { RiotComponent } from "riot";
+import { v4 as uuid } from "uuid";
 import { log } from "./util/Logger";
 
 export abstract class AbstractComponent { // implements RiotComponent {
     [key: string]: any;
-    protected className: string;
+
+    protected uuid: string;
+    protected className?: string;
     protected props: any = {};
     protected state?: any = {};
-    protected root: HTMLElement | undefined;
+    protected root: Element | undefined;
     protected name?: string;
     protected slots: Array<import("@riotjs/dom-bindings").SlotBindingData> | undefined;
     protected components?: { [key: string]: import("riot").RiotComponentShell<object, object>; };
 
-    constructor() {
-        //
+    constructor(id?: string) {
+        if (id) {
+            this.uuid = id;
+        } else {
+            this.uuid = uuid();
+        }
     }
 
     public handle(handler: (event: DocumentEvent) => void): any {
@@ -23,7 +30,7 @@ export abstract class AbstractComponent { // implements RiotComponent {
         };
     }
 
-    public onBeforeMount?(currentProps: object, currentState: object): void {
+    public onBeforeMount(currentProps: object, currentState: object): void {
         log.info(this.name + ": onBeforeMount");
     }
 
@@ -43,29 +50,31 @@ export abstract class AbstractComponent { // implements RiotComponent {
     //     return false;
     // }
 
-    public onMounted?(currentProps: object, currentState: object): void {
+    public onMounted(currentProps: object, currentState: object): void {
         log.info(this.name + ": onMounted");
 
         // store component handler instance in the DOM
-        /* tslint:disable-next-line */
-        this.root["handler"] = this;
+        if (this.root) {
+            /* tslint:disable-next-line */
+            Reflect.set(this.root, "handler", this);
+        }
         // this.state = currentState;
         // this.props = currentProps;
     }
 
-    public onBeforeUpdate?(currentProps: object, currentState: object): void {
+    public onBeforeUpdate(currentProps: object, currentState: object): void {
         log.info(this.name + ": onBeforeUpdate");
     }
 
-    public onUpdated?(currentProps: object, currentState: object): void {
+    public onUpdated(currentProps: object, currentState: object): void {
         log.info(this.name + ": onUpdated");
     }
 
-    public onBeforeUnmount?(currentProps: object, currentState: object): void {
+    public onBeforeUnmount(currentProps: object, currentState: object): void {
         log.info(this.name + ": onBeforeUnmount");
     }
 
-    public onUnmounted?(currentProps: object, currentState: object): void {
+    public onUnmounted(currentProps: object, currentState: object): void {
         log.info(this.name + ": onUnmounted");
     }
 

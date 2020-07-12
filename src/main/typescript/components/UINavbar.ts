@@ -8,8 +8,11 @@ export class UINavbar extends AbstractComponent {
         this.state.title = "";
     }
 
-    public onMounted?(currentProps: object, currentState: object): void {
+    public onMounted(currentProps: object, currentState: object): void {
         super.onMounted(currentProps, currentState);
-        const topAppBar = new MDCTopAppBar(this.root);
+
+        if (this.root) {
+            const topAppBar = new MDCTopAppBar(this.root);
+        }
     }
 }

@@ -9,7 +9,7 @@ export class UIListEntry extends AbstractComponent {
         super();
     }
 
-    onBeforeMount?(currentProps: object, currentState: object): void {
+    public onBeforeMount(currentProps: object, currentState: object): void {
         super.onBeforeMount(currentProps, currentState);
 
         this.state.selected = this.props.selected;

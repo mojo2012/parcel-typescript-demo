@@ -4,21 +4,27 @@ import { AbstractComponent } from "../AbstractComponent";
 
 export class UIDrawer extends AbstractComponent {
 
-    protected internalHandler: MDCDrawer | MDCList;
+    protected internalHandler?: MDCDrawer | MDCList;
 
     constructor() {
         super();
     }
 
-    public onMounted?(currentProps: object, currentState: object): void {
+    public onMounted(currentProps: object, currentState: object): void {
         super.onMounted(currentProps, currentState);
 
         // tslint:disable-next-line: no-string-literal
-        if (currentProps["dismissable"]) {
-            this.internalHandler = MDCDrawer.attachTo(document.querySelector(".mdc-drawer"));
+        if (Reflect.get(currentProps, "dismissable")) {
+            const elem = document.querySelector(".mdc-drawer");
+            if (elem) {
+                this.internalHandler = MDCDrawer.attachTo(elem);
+            }
         } else {
-            this.internalHandler = MDCList.attachTo(document.querySelector(".mdc-list"));
-            this.internalHandler.wrapFocus = true;
+            const elem = document.querySelector(".mdc-list");
+            if (elem) {
+                this.internalHandler = MDCList.attachTo(elem);
+                this.internalHandler.wrapFocus = true;
+            }
         }
     }
 

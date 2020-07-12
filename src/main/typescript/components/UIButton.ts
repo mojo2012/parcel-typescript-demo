@@ -8,9 +8,13 @@ export class UIButton extends AbstractComponent {
         super();
     }
 
-    public onMounted?(currentProps: object, currentState: object): void {
+    public onMounted(currentProps: object, currentState: object): void {
         super.onMounted(currentProps, currentState);
-        const buttonRipple = new MDCRipple(document.querySelector(".mdc-button"));
+
+        const elem = document.querySelector(".mdc-button");
+        if (elem) {
+            const buttonRipple = new MDCRipple(elem);
+        }
     }
 
     public onClick(event: InputEvent): void {

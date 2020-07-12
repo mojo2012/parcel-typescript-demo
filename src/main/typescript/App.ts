@@ -1,5 +1,5 @@
 import { AbstractComponent } from "./AbstractComponent";
-import { Store } from './store/Store';
+import { Store } from "./store/Store";
 import { log } from "./util/Logger";
 
 export class App extends AbstractComponent {
@@ -15,7 +15,7 @@ export class App extends AbstractComponent {
     public onMenu(event: any): void {
         log.info("Menu button clicked");
 
-        Store.getInstance().update("navbar.visibility", false);
+        Store.getInstance().dispatch("navbar.visibility", undefined, false);
 
         // this.$(".nav-drawer").handler.openOrClose();
     }
