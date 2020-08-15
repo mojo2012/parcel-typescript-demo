@@ -5,12 +5,17 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "chrome",
+            "type": "firefox",
             "request": "launch",
-            "name": "Launch Chrome against localhost",
+            "name": "Launch localhost",
             "url": "http://localhost:1234",
             "webRoot": "${workspaceFolder}/parcel-demo/",
-            // "runtimeExecutable": "/Applications/Internet/Google Chrome.app/Contents/MacOS/Google Chrome"
+            "pathMappings": [
+                {
+                    "url": "http://localhost:1234/src/main/src/main/typescript",
+                    "path": "${workspaceFolder}/src/main/typescript"
+                }
+            ]
         }
     ]
 }
